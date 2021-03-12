@@ -1,13 +1,23 @@
 import Head from 'next/head'
+import { Header } from '../components/Header'
 import styles from '../styles/pages/Home.module.css'
 
-export default function Home() {
+interface HomeProps {
+  user: {
+    name: string
+    avatar_url: string
+  }
+}
+
+export default function Home({ user }: HomeProps) {
+
   return (
     <div className={styles.container}>
       <Head>
-        <title>Create Next App</title>
+        <title>{user.name} - Portfolio</title>
       </Head>
 
+      <Header name={user.name} avatarUrl={user.avatar_url} />
       <main className={styles.main}>
         <h1 className={styles.title}>
           Welcome to <a href="https://nextjs.org">Next.js!</a>
@@ -61,4 +71,15 @@ export default function Home() {
       </footer>
     </div>
   )
+}
+
+export async function getServerSideProps() {
+  const res = await fetch('https://api.github.com/users/felipepcovatti')
+  const user = await res.json()
+
+  return {
+    props: {
+      user
+    }
+  }
 }
