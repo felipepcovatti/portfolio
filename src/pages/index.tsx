@@ -18,6 +18,7 @@ export default function Home({ user }: HomeProps) {
       </Head>
 
       <Header name={user.name} avatarUrl={user.avatar_url} />
+
       <main className={styles.main}>
         <h1 className={styles.title}>
           Welcome to <a href="https://nextjs.org">Next.js!</a>
