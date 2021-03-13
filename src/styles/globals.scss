@@ -76,15 +76,16 @@ body {
   background-size: cover;
   background-repeat: no-repeat;
   opacity: 1;
-  // background-image: url("../img/vscode.png");
+  background-image: url("/images/vscode.png");
   @include tablet() {
     background-position: center bottom;
-    // background-image: url("../img/vscode-large.png");
+    background-image: url("/images/vscode-large.png");
   }
 }
 
 header.abovethefold {
   font-size: 0.8em;
+  height: 100vh;
   @include tablet() {
     font-size: inherit;
   }
