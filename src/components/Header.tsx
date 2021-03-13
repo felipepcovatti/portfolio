@@ -1,3 +1,5 @@
+import { Link } from 'react-scroll'
+
 interface HeaderProps {
   name: string
   avatarUrl: string
@@ -13,7 +15,7 @@ export function Header({ name, avatarUrl }) {
           <div className="row">
             <div className="col order-md-last">
               <div className="profile-pic-box">
-                <img className="rounded-circle" src={avatarUrl} alt="Photo of Felipe" />
+                <img className="rounded-circle" src={avatarUrl} alt={`Photo of ${firstName}`} />
               </div>
             </div>
             <div className="col-md-8 col-lg-9 order-md-first">
@@ -26,10 +28,22 @@ export function Header({ name, avatarUrl }) {
       <div className="bottom-side container">
         <ul className="nav nav-cta">
           <li className="nav-item">
-            <a className="nav-link btn btn-primary btn-lg" href="#projects">View projects</a>
+            <Link
+              className="nav-link btn btn-primary btn-lg"
+              to="projects"
+              smooth={true}
+            >
+              View projects
+            </Link>
           </li>
           <li className="nav-item">
-            <a className="nav-link btn btn-secondary btn-lg" href="#about">About me</a>
+            <Link
+              className="nav-link btn btn-secondary btn-lg"
+              to="about"
+              smooth={true}
+            >
+              About me
+            </Link>
           </li>
         </ul>
       </div>
