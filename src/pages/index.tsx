@@ -2,8 +2,7 @@ import Head from 'next/head'
 import { About } from '../components/About'
 import { Header } from '../components/Header'
 import { ProjectsList } from '../components/ProjectsList'
-import styles from '../styles/pages/Home.module.css'
-
+import { GlobalStyle } from '../styles/global'
 interface Project {
   id: number
   html_url: string
@@ -32,7 +31,7 @@ export default function Home({ user, repos }: HomeProps) {
 
       <ProjectsList repos={repos} />
 
-      <About />
+      <GlobalStyle />
     </div>
   )
 }
