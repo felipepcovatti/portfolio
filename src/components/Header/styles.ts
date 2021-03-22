@@ -2,7 +2,7 @@ import styled from 'styled-components'
 
 export const Container = styled.header`
   background: black;
-`
+`;
 
 export const Content = styled.div`
   max-width: 1120px;
@@ -57,6 +57,11 @@ export const Content = styled.div`
         background: var(--primary);
         padding: 1rem;
         cursor: pointer;
+        transition: filter 0.2s;
+    
+        &:hover {
+          filter: brightness(0.9)
+        }
       }
       
       & + li {

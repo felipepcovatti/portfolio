@@ -16,19 +16,19 @@ export function Header({ name, avatarUrl }) {
           <img src={avatarUrl} alt={`Photo of ${firstName}`} />
           <div>
             <h1><em>Hi</em>, I'm {firstName}<em>.</em></h1>
-            <p>On this page you can find some projects I've worked on.</p>
+            <p>Here you can find some [course] projects I've worked on.</p>
           </div>
         </div>
 
         <ul>
           <li>
             <Link to="projects" smooth={true}>
-              {'<ProjectsList />'}
+              Projects
             </Link>
           </li>
           <li>
             <Link to="about" smooth={true}>
-              {'<AboutMe />'}
+              About Me
             </Link>
           </li>
         </ul>
