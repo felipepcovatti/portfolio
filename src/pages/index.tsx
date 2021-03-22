@@ -6,7 +6,7 @@ import { GlobalStyle } from '../styles/global'
 import { GetStaticProps } from 'next'
 import { github } from '../services/github'
 import { firebase } from '../services/firebase'
-import { AboveTheFoldHome } from './styles'
+import { AboveTheFoldHome } from '../styles/pages/Home'
 interface Project {
   id: number
   title: string
