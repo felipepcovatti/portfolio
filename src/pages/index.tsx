@@ -3,9 +3,14 @@ import { Header } from '../components/Header'
 import { AboutMe } from '../components/AboutMe'
 import { ProjectsList } from '../components/ProjectsList'
 import { GlobalStyle } from '../styles/global'
+import { GetStaticProps } from 'next'
+import { github } from '../services/github'
+import { firebase } from '../services/firebase'
 import { AboveTheFoldHome } from './styles'
 interface Project {
   id: number
+  title: string
+  image_url: string
   html_url: string
   description: string
   homepage: string
@@ -28,7 +33,7 @@ export default function Home({ user, repos }: HomeProps) {
       </Head>
 
       <AboveTheFoldHome>
-      <Header name={user.name} avatarUrl={user.avatar_url} />
+        <Header name={user.name} avatarUrl={user.avatar_url} />
       </AboveTheFoldHome>
 
       <ProjectsList repos={repos} />
@@ -40,15 +45,24 @@ export default function Home({ user, repos }: HomeProps) {
   )
 }
 
-export async function getServerSideProps() {
-  const userApi = 'https://api.github.com/users/felipepcovatti'
-  const user = await (await fetch(userApi)).json()
-  const repos = await (await fetch(userApi + '/repos')).json()
+export const getStaticProps: GetStaticProps = async () => {
+  const { data: user } = await github.user.get('')
+  const { data: allRepos } = await github.projects.get<Omit<Project, 'title'>[]>('')
+  const featuredRepos = (await firebase.featuredProjects.get()).val();
+
+  const repos = featuredRepos.map(({ id, ...rest }) => {
+    const repo = allRepos.find(findRepo => findRepo.id === id)
+    return {
+      ...repo,
+      ...rest
+    }
+  })
 
   return {
     props: {
       user,
-      repos,
-    }
+      repos
+    },
+    revalidate: 3600, // one hour
   }
 }

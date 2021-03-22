@@ -1,5 +1,5 @@
 import { Project } from "./Project";
-import { Container, Content } from "./styles";
+import { Container, Content, List } from "./styles";
 
 export function ProjectsList({ repos }) {
 
@@ -9,16 +9,13 @@ export function ProjectsList({ repos }) {
     <Container id="projects">
       <Content>
         <h2>Projects</h2>
-        <div>
-          <p>Note: Some projects originated from online courses and were developed based on
-          provided mockups, starter files and/or following intructor guidance.
-            Please, refer to each repository README.md file for details :)</p>
-        </div>
-        <div>
+        <p>Projects originated in the Front End Web Development Techdegree course
+          from teamtreehouse.com, and based on provided mockup images and/or starter files.</p>
+        <List>
           {projects.map(project => (
             <Project key={project.id} project={project} />
           ))}
-        </div>
+        </List>
       </Content>
     </Container>
   )
