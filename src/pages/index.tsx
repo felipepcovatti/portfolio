@@ -1,6 +1,6 @@
 import Head from 'next/head'
-import { About } from '../components/About'
 import { Header } from '../components/Header'
+import { AboutMe } from '../components/AboutMe'
 import { ProjectsList } from '../components/ProjectsList'
 import { GlobalStyle } from '../styles/global'
 interface Project {
@@ -30,6 +30,8 @@ export default function Home({ user, repos }: HomeProps) {
       <Header name={user.name} avatarUrl={user.avatar_url} />
 
       <ProjectsList repos={repos} />
+
+      <AboutMe />
 
       <GlobalStyle />
     </div>
