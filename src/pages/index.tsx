@@ -3,6 +3,7 @@ import { Header } from '../components/Header'
 import { AboutMe } from '../components/AboutMe'
 import { ProjectsList } from '../components/ProjectsList'
 import { GlobalStyle } from '../styles/global'
+import { AboveTheFoldHome } from './styles'
 interface Project {
   id: number
   html_url: string
@@ -19,15 +20,16 @@ interface HomeProps {
 }
 
 export default function Home({ user, repos }: HomeProps) {
-
   return (
-    <div className={styles.container}>
+    <div>
+
       <Head>
         <title>{user.name} - Portfolio</title>
       </Head>
-      <div className="background-div">
-      </div>
+
+      <AboveTheFoldHome>
       <Header name={user.name} avatarUrl={user.avatar_url} />
+      </AboveTheFoldHome>
 
       <ProjectsList repos={repos} />
 
