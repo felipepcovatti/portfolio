@@ -31,6 +31,7 @@ export default function Home({ user, repos }: HomeProps) {
       <Head>
         <title>{user.name} - Portfolio</title>
       </Head>
+      <GlobalStyle />
 
       <AboveTheFoldHome>
         <Header name={user.name} avatarUrl={user.avatar_url} />
@@ -39,8 +40,6 @@ export default function Home({ user, repos }: HomeProps) {
       <ProjectsList repos={repos} />
 
       <AboutMe />
-
-      <GlobalStyle />
     </div>
   )
 }
