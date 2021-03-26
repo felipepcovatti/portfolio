@@ -6,5 +6,8 @@ export const github = {
   }),
   projects: axios.create({
     baseURL: `https://api.github.com/users/${process.env.GITHUB_USER}/repos`,
+    params: {
+      per_page: 50
+    }
   })
 }
