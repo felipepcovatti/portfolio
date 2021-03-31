@@ -6,7 +6,7 @@ interface HeaderProps {
   avatarUrl: string
 }
 
-export function Header({ name, avatarUrl }) {
+export function Header({ name, avatarUrl }: HeaderProps) {
   const firstName = name.split(' ')[0]
 
   return (
