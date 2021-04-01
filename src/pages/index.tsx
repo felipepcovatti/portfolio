@@ -2,11 +2,10 @@ import Head from 'next/head'
 import { Header } from '../components/Header'
 import { AboutMe } from '../components/AboutMe'
 import { ProjectsList } from '../components/ProjectsList'
-import { GlobalStyle } from '../styles/global'
 import { GetStaticProps } from 'next'
 import { github } from '../services/github'
 import { firebase } from '../services/firebase'
-import { AboveTheFoldHome } from '../styles/pages/Home'
+import styles from './home.module.scss'
 interface Project {
   id: number
   title: string
@@ -31,11 +30,10 @@ export default function Home({ user, repos }: HomeProps) {
       <Head>
         <title>{user.name} - Portfolio</title>
       </Head>
-      <GlobalStyle />
 
-      <AboveTheFoldHome>
+      <div className={styles.aboveTheFoldHome}>
         <Header name={user.name} avatarUrl={user.avatar_url} />
-      </AboveTheFoldHome>
+      </div>
 
       <ProjectsList repos={repos} />
 

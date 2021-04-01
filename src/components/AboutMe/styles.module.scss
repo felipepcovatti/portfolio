@@ -1,12 +1,10 @@
-import styled from 'styled-components'
-
-export const Container = styled.section`
+.container {
   background: var(--secondary);
   color: #fff;
   padding-bottom: 2rem;
-`;
+}
 
-export const Content = styled.div`
+.content {
   max-width: 1120px;
   margin: 0 auto;
   padding: 2rem 1rem;
@@ -15,34 +13,18 @@ export const Content = styled.div`
       text-align: center;
       margin-bottom: 2rem;
   }
+}
 
-  .email-address {
-    display: block;
-    svg {
-      height: 3rem;
-      display: inline;
-      fill: currentColor;
-      &:first-child{
-        max-width: 12em;
-        margin-right: 0.17rem;
-      }
-      &:last-child {
-        max-width: 10em;
-      }
-    }
-  }
-`;
-
-export const MainText = styled.div`
+.mainText {
   margin: 0 0 3rem;
 
   p {
     max-width: 720px;
     margin: 0 auto 1rem;
   }
-`;
+}
 
-export const InformationContainer = styled.div`
+.informationContainer {
   display: grid;
   grid-template-columns: 1fr;
   grid-auto-rows: min-content;
@@ -56,10 +38,9 @@ export const InformationContainer = styled.div`
   h3 {
     margin-bottom: 1.5rem;
   }
-`
+}
 
-export const Interests = styled.div`
-
+.interests {
   @media(min-width: 720px) {
     grid-area: interests;
   }
@@ -98,10 +79,9 @@ export const Interests = styled.div`
       }
     }
   }
-  
-`;
+}
 
-export const More = styled.div`
+.more {
   a {
     display: flex;
     align-items: center;
@@ -120,9 +100,24 @@ export const More = styled.div`
       margin-right: 0.75rem;
     }
   }
-`;
+}
 
-export const Contact = styled.div`
+.contact {
   text-align: right;
-`;
+}
 
+.emailAddress {
+  display: block;
+  svg {
+    height: 3rem;
+    display: inline;
+    fill: currentColor;
+    &:first-child {
+      max-width: 12em;
+      margin-right: 0.17rem;
+    }
+    &:last-child {
+      max-width: 10em;
+    }
+  }
+}

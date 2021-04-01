@@ -1,11 +1,10 @@
-import styled from 'styled-components'
-
-export const Container = styled.section`
+.container {
   background: var(--background);
   color: #fff;
-`;
+}
 
-export const Content = styled.div`
+
+.content {
   max-width: 1120px;
   margin: 0 auto;
   padding: 2rem 1rem;
@@ -19,9 +18,9 @@ export const Content = styled.div`
     max-width: 720px;
     margin: 0 auto 1rem;
   }
-`;
+}
 
-export const List = styled.div`
+.projectList {
   display: grid;
   grid-template-columns: 1fr;
   gap: 2rem;
@@ -30,4 +29,4 @@ export const List = styled.div`
   @media(min-width: 720px) {
     grid-template-columns: repeat(3, 1fr);
   }
-`
+}

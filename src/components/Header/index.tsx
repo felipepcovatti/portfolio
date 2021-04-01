@@ -1,5 +1,5 @@
 import { Link } from 'react-scroll'
-import { Container, Content } from './styles'
+import styles from './styles.module.scss'
 
 interface HeaderProps {
   name: string
@@ -10,8 +10,8 @@ export function Header({ name, avatarUrl }: HeaderProps) {
   const firstName = name.split(' ')[0]
 
   return (
-    <Container>
-      <Content>
+    <header className={styles.container}>
+      <div className={styles.content}>
         <div>
           <img src={avatarUrl} alt={`Photo of ${firstName}`} />
           <div>
@@ -32,8 +32,7 @@ export function Header({ name, avatarUrl }: HeaderProps) {
             </Link>
           </li>
         </ul>
-      </Content>
-    </Container>
-
+      </div>
+    </header>
   )
 }

@@ -1,22 +1,22 @@
 import { Project } from "./Project";
-import { Container, Content, List } from "./styles";
+import styles from './styles.module.scss'
 
 export function ProjectsList({ repos }) {
 
   const projects = repos;
 
   return (
-    <Container id="projects">
-      <Content>
+    <section className={styles.container} id="projects">
+      <div className={styles.content}>
         <h2>Projects</h2>
         <p>Projects originated in the Front End Web Development Techdegree course
           from teamtreehouse.com, and based on provided mockup images and/or starter files.</p>
-        <List>
+        <div className={styles.projectList}>
           {projects.map(project => (
             <Project key={project.id} project={project} />
           ))}
-        </List>
-      </Content>
-    </Container>
+        </div>
+      </div>
+    </section>
   )
 }

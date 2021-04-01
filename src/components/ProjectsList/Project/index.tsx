@@ -1,4 +1,4 @@
-import { Container, Description, Links } from "./styles";
+import styles from './styles.module.scss'
 import { FaCode, FaExternalLinkAlt } from 'react-icons/fa';
 
 interface Project {
@@ -17,22 +17,22 @@ interface ProjectProps {
 
 export function Project({ project }: ProjectProps) {
   return (
-    <Container>
+    <div className={styles.container}>
       <img src={project.image_url} alt={`Screenshot of the ${project.title}`} />
-      <Description>
+      <div className={styles.description}>
         <h3>{project.title}</h3>
         <p>
           {project.description}
         </p>
-      </Description>
-      <Links>
+      </div>
+      <div className={styles.buttonsContainer}>
         <a href={project.homepage} target="_blank">
           Live <FaExternalLinkAlt />
         </a>
         <a href={project.html_url} target="_blank">
           Repo <FaCode />
         </a>
-      </Links>
-    </Container>
+      </div>
+    </div>
   )
 }
