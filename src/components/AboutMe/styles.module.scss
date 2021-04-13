@@ -87,11 +87,11 @@
     align-items: center;
     justify-content: flex-start;
     margin-bottom: 1rem;
-    text-decoration: underline;
     transition: filter 0.2s;
 
     &:hover {
       filter: brightness(0.9);
+      text-decoration: underline;
     }
 
     svg {
