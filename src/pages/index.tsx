@@ -60,6 +60,6 @@ export const getStaticProps: GetStaticProps = async () => {
       user,
       repos
     },
-    revalidate: 3600, // one hour
+    revalidate: 60, // one minute
   }
 }
