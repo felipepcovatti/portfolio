@@ -9,8 +9,7 @@ export function ProjectsList({ repos }) {
     <section className={styles.container} id="projects">
       <div className={styles.content}>
         <h2>Projects</h2>
-        <p>Projects originated in the Front End Web Development Techdegree course
-          from teamtreehouse.com, and based on provided mockup images and/or starter files.</p>
+        <p>Projects originated from online coding courses, and based on provided mockup images and/or starter files. Please, refer to each repository (Repo) for more information.</p>
         <div className={styles.projectList}>
           {projects.map(project => (
             <Project key={project.id} project={project} />
