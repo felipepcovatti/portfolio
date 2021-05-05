@@ -55,9 +55,7 @@ export function AboutMe() {
             <h3>Contact</h3>
             <p>Feel free to contact me at:
               <span className="sr-only">The email is displayed in SVG elements, for security
-              reasons. If you would like to know the email and do not have access to it, you can easily form the email
-              by adding "_p_covatti@g_mail.com" to the end of the word "felipe", removing the quotation marks and
-              the underline characteres.
+              reasons. You can form the email by adding felipepcovatti to the start of @gmail.com".
               </span>
               <span className={styles.emailAddress}>
                 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 168.7 27.4">
