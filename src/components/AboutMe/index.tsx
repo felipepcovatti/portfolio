@@ -1,24 +1,23 @@
+import { RichText, RichTextBlock } from "prismic-reactjs";
 import { FaBehance, FaGithub, FaLinkedin } from "react-icons/fa";
 import { SiJavascript, SiNextDotJs, SiReact, SiTypescript } from 'react-icons/si'
 import styles from './styles.module.scss'
 
-export function AboutMe() {
+interface AboutMeProps {
+  content: {
+    aboutText: RichTextBlock[]
+    username: string;
+  }
+}
+
+export function AboutMe({ content }: AboutMeProps) {
+  const { aboutText, username } = content;
   return (
     <section className={styles.container} id="about">
       <div className={styles.content}>
         <h2>About me</h2>
         <div className={styles.mainText}>
-          <p>I have a bachelor's degree in graphic design and 2+ years of
-          work experience in the tech industry, initially
-          as a designer and then, as a junior frontend developer.
-          </p>
-          <p>While I am interested in the entire process of modern software
-          development, my current focus is on getting deeper into front-end
-          frameworks.
-          </p>
-          <p>I am currently based in Brazil and I am open to job
-          opportunities in frontend development.
-          </p>
+          {RichText.render(aboutText)}
         </div>
         <div className={styles.informationContainer}>
           <div className={styles.interests}>
@@ -33,21 +32,21 @@ export function AboutMe() {
           <div className={styles.more}>
             <h3>More</h3>
             <div>
-              <a href="https://www.linkedin.com/in/felipepcovatti" target="_blank">
+              <a href={`https://www.linkedin.com/in/${username}`} target="_blank">
                 <FaLinkedin />
-                <span>linkedin.com/in/felipepcovatti</span>
+                <span>linkedin.com/in/{username}</span>
               </a>
             </div>
             <div>
-              <a href="https://github.com/felipepcovatti" target="_blank">
+              <a href={`https://github.com/${username}`} target="_blank">
                 <FaGithub />
-                <span>github.com/felipepcovatti</span>
+                <span>github.com/{username}</span>
               </a>
             </div>
             <div>
-              <a href="https://behance.net/felipepcovatti" target="_blank">
+              <a href={`https://behance.net/${username}`} target="_blank">
                 <FaBehance />
-                <span>behance.net/felipepcovatti</span>
+                <span>behance.net/{username}</span>
               </a>
             </div>
           </div>
@@ -55,7 +54,7 @@ export function AboutMe() {
             <h3>Contact</h3>
             <p>Feel free to contact me at:
               <span className="sr-only">The email is displayed in SVG elements, for security
-              reasons. You can form the email by adding felipepcovatti to the start of @gmail.com".
+              reasons. You can form the email by adding {username} to the start of @gmail.com".
               </span>
               <span className={styles.emailAddress}>
                 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 168.7 27.4">

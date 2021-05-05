@@ -2,13 +2,13 @@ import styles from './styles.module.scss'
 import { FaCode, FaExternalLinkAlt } from 'react-icons/fa';
 
 interface Project {
-  id: number
   title: string
-  image_url: string
+  image: {
+    url: string
+  }
   html_url: string
   description: string
   homepage: string
-  languages_url: string
 }
 
 interface ProjectProps {
@@ -18,7 +18,7 @@ interface ProjectProps {
 export function Project({ project }: ProjectProps) {
   return (
     <div className={styles.container}>
-      <img src={project.image_url} alt={`Screenshot of the ${project.title}`} />
+      <img src={project.image.url} alt={`Screenshot of the ${project.title}`} />
       <div className={styles.description}>
         <h3>{project.title}</h3>
         <p>

@@ -4,61 +4,115 @@ import { AboutMe } from '../components/AboutMe'
 import { ProjectsList } from '../components/ProjectsList'
 import { GetStaticProps } from 'next'
 import { github } from '../services/github'
-import { firebase } from '../services/firebase'
 import styles from './home.module.scss'
+import { getPrismicClient } from '../services/prismic'
+import { RichTextBlock } from 'prismic-reactjs'
 interface Project {
   id: number
   title: string
-  image_url: string
+  image: {
+    url: string
+  }
   html_url: string
   description: string
   homepage: string
-  languages_url: string
+}
+
+type Content = {
+  heading: RichTextBlock[]
+  subheading: RichTextBlock[]
+  about_text: RichTextBlock[]
+  background_image: {
+    url: string,
+    mobile: {
+      url: string
+    }
+  }
+  projects_text: RichTextBlock[]
+}
+
+type User = {
+  name: string
+  username: string
+  avatar_url: string
 }
 interface HomeProps {
-  user: {
-    name: string
-    avatar_url: string
-  }
-  repos: Project[]
+  user: User
+  projects: Project[]
+  content: Content
 }
 
-export default function Home({ user, repos }: HomeProps) {
+export default function Home({ user, projects, content }: HomeProps) {
+  const {
+    heading,
+    subheading,
+    about_text: aboutText,
+    background_image: backgroundImage,
+    projects_text: projectsText
+  } = content;
+  const { avatar_url: avatarUrl } = user;
+  const name = user.name.split(' ')[0];
+  const username = user.username;
+
   return (
     <div>
-
       <Head>
-        <title>{user.name} - Portfolio</title>
+        <title>{name} - Portfolio</title>
       </Head>
 
+      <style jsx>{`
+        .${styles.aboveTheFoldHome} {
+          background-image: url(${backgroundImage.mobile.url});
+        }
+
+        @media(min-width: 720px) {
+          .${styles.aboveTheFoldHome} {
+            background-image: url(${backgroundImage.url});
+          }
+        }
+      `}</style>
+
       <div className={styles.aboveTheFoldHome}>
-        <Header name={user.name} avatarUrl={user.avatar_url} />
+        <Header content={{ name, heading, subheading, avatarUrl }} />
       </div>
 
-      <ProjectsList repos={repos} />
+      <ProjectsList projects={projects} content={{ projectsText }} />
 
-      <AboutMe />
+      <AboutMe content={{ aboutText, username }} />
     </div>
   )
 }
 
 export const getStaticProps: GetStaticProps = async () => {
-  const { data: user } = await github.user.get('')
-  const { data: allRepos } = await github.projects.get<Omit<Project, 'title'>[]>('')
-  const featuredRepos = (await firebase.featuredProjects.get()).val();
+  const prismic = getPrismicClient();
 
-  const repos = featuredRepos.map(({ id, ...rest }) => {
-    const repo = allRepos.find(findRepo => findRepo.id === id)
+  const {
+    data: {
+      username,
+      projects: selectedProjects,
+      ...content
+    }
+  } = await prismic.getSingle('content', {})
+
+  const user = await github(username).user()
+  const repositories = await github(username).repositories()
+
+  const projects = selectedProjects.map(({ id, ...rest }) => {
+    const repository = repositories.find(repo => repo.id === id)
     return {
-      ...repo,
+      ...repository,
       ...rest
     }
   })
 
   return {
     props: {
-      user,
-      repos
+      user: {
+        ...user,
+        username
+      },
+      projects,
+      content
     },
     revalidate: 60, // one minute
   }

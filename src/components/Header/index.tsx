@@ -1,22 +1,26 @@
+import { RichText, RichTextBlock } from 'prismic-reactjs';
 import { Link } from 'react-scroll'
 import styles from './styles.module.scss'
 
 interface HeaderProps {
-  name: string
-  avatarUrl: string
+  content: {
+    name: string
+    heading: RichTextBlock[]
+    subheading: RichTextBlock[]
+    avatarUrl: string
+  }
 }
 
-export function Header({ name, avatarUrl }: HeaderProps) {
-  const firstName = name.split(' ')[0]
-
+export function Header({ content }: HeaderProps) {
+  const { name, heading, subheading, avatarUrl } = content;
   return (
     <header className={styles.container}>
       <div className={styles.content}>
         <div>
-          <img src={avatarUrl} alt={`Photo of ${firstName}`} />
+          <img src={avatarUrl} alt={`Photo of ${name}`} />
           <div>
-            <h1><em>Hi</em>, I'm {firstName}<em>.</em></h1>
-            <p>Here you can find some [course] projects I've worked on.</p>
+            {RichText.render(heading)}
+            {RichText.render(subheading)}
           </div>
         </div>
 
