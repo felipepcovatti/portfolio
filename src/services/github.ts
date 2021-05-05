@@ -26,7 +26,7 @@ export function github(username: string) {
     async repositories() {
       const { data: repositories } = await githubApi.get<Repository[]>(`users/${username}/repos`, {
         params: {
-      per_page: 50
+          per_page: 100
         }
       })
       return repositories
