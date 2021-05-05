@@ -20,7 +20,7 @@ interface ProjectsProps {
   }
 }
 
-export function ProjectsList({ projects, content }: ProjectsProps) {
+export function Projects({ projects, content }: ProjectsProps) {
 
   return (
     <section className={styles.container} id="projects">

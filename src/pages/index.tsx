@@ -1,7 +1,7 @@
 import Head from 'next/head'
 import { Header } from '../components/Header'
 import { AboutMe } from '../components/AboutMe'
-import { ProjectsList } from '../components/ProjectsList'
+import { Projects } from '../components/Projects'
 import { GetStaticProps } from 'next'
 import { github } from '../services/github'
 import styles from './home.module.scss'
@@ -76,7 +76,7 @@ export default function Home({ user, projects, content }: HomeProps) {
         <Header content={{ name, heading, subheading, avatarUrl }} />
       </div>
 
-      <ProjectsList projects={projects} content={{ projectsText }} />
+      <Projects projects={projects} content={{ projectsText }} />
 
       <AboutMe content={{ aboutText, username }} />
     </div>
