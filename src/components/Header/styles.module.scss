@@ -3,12 +3,16 @@
 }
 
 .content {
+  display: flex;
+  position: relative;
+  justify-content: center;
   max-width: 1120px;
   margin: 0 auto;
   padding: 0 1rem;
   color: white;
 
   @media(min-width:721px) {
+    justify-content: flex-start;
     img {
       order: 2;
     }
@@ -16,6 +20,7 @@
 
   > div:first-child {
     display: flex;
+    flex: 1;
     justify-content: space-between;
     flex-direction: column;
     align-items: center;
@@ -43,7 +48,7 @@
   }
 
   ul {
-    margin-top: 2rem;
+    bottom: -5rem;
     position: absolute;
     list-style: none;
 
@@ -51,6 +56,7 @@
       display: inline-block;
       font-size: 1.2rem;
       a {
+        display: block;
         border-radius: 0.25rem;
         background: var(--primary);
         padding: 1rem;
