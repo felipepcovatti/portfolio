@@ -1,6 +1,6 @@
 import { RichText, RichTextBlock } from "prismic-reactjs";
 import { FaBehance, FaGithub, FaLinkedin } from "react-icons/fa";
-import { SiJavascript, SiNextDotJs, SiReact, SiTypescript } from 'react-icons/si'
+import { SiJavascript, SiNextDotJs, SiReact, SiTypescript, SiVueDotJs } from 'react-icons/si'
 import styles from './styles.module.scss'
 
 interface AboutMeProps {
@@ -23,10 +23,10 @@ export function AboutMe({ content }: AboutMeProps) {
           <div className={styles.interests}>
             <h3>Main interests:</h3>
             <div>
-              <span><SiJavascript /> JavaScrit</span>
-              <span><SiReact /> React</span>
               <span><SiTypescript /> TypeScript</span>
-              <span><SiNextDotJs /> Next.js</span>
+              <span><SiJavascript /> JavaScrit</span>
+              <span><SiVueDotJs /> Vue</span>
+              <span><SiReact /> React</span>
             </div>
           </div>
           <div className={styles.more}>
@@ -54,7 +54,7 @@ export function AboutMe({ content }: AboutMeProps) {
             <h3>Contact</h3>
             <p>Feel free to contact me at:
               <span className="sr-only">The email is displayed in SVG elements, for security
-              reasons. You can form the email by adding {username} to the start of @gmail.com".
+                reasons. You can form the email by adding {username} to the start of @gmail.com".
               </span>
               <span className={styles.emailAddress}>
                 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 168.7 27.4">
