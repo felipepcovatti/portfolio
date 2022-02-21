@@ -43,12 +43,6 @@ export function AboutMe({ content }: AboutMeProps) {
                 <span>github.com/{username}</span>
               </a>
             </div>
-            <div>
-              <a href={`https://behance.net/${username}`} target="_blank">
-                <FaBehance />
-                <span>behance.net/{username}</span>
-              </a>
-            </div>
           </div>
           <div className={styles.contact}>
             <h3>Contact</h3>
