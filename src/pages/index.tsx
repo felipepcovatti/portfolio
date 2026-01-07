@@ -16,6 +16,8 @@ interface Project {
   html_url: string
   description: string
   homepage: string
+  created_at: string
+  updated_at: string
 }
 
 type Content = {
