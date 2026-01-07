@@ -1,6 +1,6 @@
 import { RichText, RichTextBlock } from "prismic-reactjs";
-import { FaBehance, FaGithub, FaLinkedin } from "react-icons/fa";
-import { SiJavascript, SiNextDotJs, SiReact, SiTypescript, SiVueDotJs } from 'react-icons/si'
+import { FaGithub, FaLinkedin } from "react-icons/fa";
+import { SiJavascript, SiReact, SiTypescript, SiVuedotjs } from 'react-icons/si'
 import styles from './styles.module.scss'
 
 interface AboutMeProps {
@@ -25,7 +25,7 @@ export function AboutMe({ content }: AboutMeProps) {
             <div>
               <span><SiTypescript /> TypeScript</span>
               <span><SiJavascript /> JavaScrit</span>
-              <span><SiVueDotJs /> Vue</span>
+              <span><SiVuedotjs /> Vue</span>
               <span><SiReact /> React</span>
             </div>
           </div>
