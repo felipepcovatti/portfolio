@@ -1,6 +1,5 @@
 import { RichText, RichTextBlock } from "prismic-reactjs";
 import { FaGithub, FaLinkedin } from "react-icons/fa";
-import { SiJavascript, SiReact, SiTypescript, SiVuedotjs, SiHtml5, SiSass, SiCss3, SiNextdotjs } from 'react-icons/si'
 import styles from './styles.module.scss'
 
 interface AboutMeProps {
@@ -20,22 +19,6 @@ export function AboutMe({ content }: AboutMeProps) {
           {RichText.render(aboutText)}
         </div>
         <div className={styles.informationContainer}>
-          <div className={styles.tools}>
-            <h3>Tools</h3>
-            <div>
-              <div>
-                <span><SiTypescript /> TypeScript</span>
-                <span><SiVuedotjs /> Vue</span>
-                <span><SiCss3 /> CSS3</span>
-                <span><SiHtml5 /> HTML5</span>
-              </div>
-              <div>
-                <span><SiJavascript /> JavaScript</span>
-                <span><SiReact /> React</span>
-                <span><SiNextdotjs /> Next.js</span>
-              </div>
-            </div>
-          </div>
           <div className={styles.more}>
             <h3>More</h3>
             <div>
