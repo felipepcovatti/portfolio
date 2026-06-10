@@ -82,8 +82,8 @@ export default function Home() {
               including revenue data, visits (accesses), and transactions.
             </p>
             <p>
-              Featuring interactive charts with a responsive design, it was
-              implemented with Nuxt (Vue), Tailwind and Reka UI.
+              It was implemented using Nuxt (Vue), Tailwind and Reka UI and
+              features responsive charts and a map, built with Unovis (D3.js).
             </p>
             <p>
               More details about the project can be found in its{" "}
