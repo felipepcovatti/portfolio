@@ -95,9 +95,9 @@ export default function Home() {
           </ProjectCard>
           <div className="flex flex-col gap-6">
             <p>
-              The two following were selected from a range of smaller projects
-              originated from online coding platforms were I have studied in the
-              past.
+              The following two projects were selected from a range of smaller
+              ones originated from online coding platforms where I have studied
+              in the past.
             </p>
             <div className="flex flex-col gap-8">
               <ProjectCard
@@ -130,7 +130,7 @@ export default function Home() {
                   and was created based on a provided design.
                 </p>
                 <p>
-                  It was build using vanilla JavaScript and the Chart.js
+                  It was built using vanilla JavaScript and the Chart.js
                   library.
                 </p>
               </ProjectCard>
