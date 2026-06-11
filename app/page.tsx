@@ -82,7 +82,7 @@ export default function Home() {
               including revenue data, visits (accesses), and transactions.
             </p>
             <p>
-              It was implemented using Nuxt (Vue), Tailwind and Reka UI and
+              It was implemented using Nuxt (Vue.js), Tailwind, and Reka UI and
               features responsive charts and a map, built with Unovis (D3.js).
             </p>
             <p>
@@ -96,8 +96,7 @@ export default function Home() {
           <div className="flex flex-col gap-6">
             <p>
               The following two projects were selected from a range of smaller
-              ones originated from online coding platforms where I have studied
-              in the past.
+              ones, developed during coding courses I completed years ago.
             </p>
             <div className="flex flex-col gap-8">
               <ProjectCard
@@ -107,14 +106,13 @@ export default function Home() {
                 previewLink="https://fpc-worldtrip.vercel.app/"
               >
                 <p>
-                  This project was developed during my studies at{" "}
+                  A fictional travel guide site developed during my studies at{" "}
                   <ExternalLink to="https://www.rocketseat.com.br/">
                     Rocketseat
-                  </ExternalLink>{" "}
-                  and was created based on a provided Figma design of a
-                  fictional travel guide website.
+                  </ExternalLink>
+                  , created based on a provided Figma design.
                 </p>
-                <p>It uses Next (React) and Chakra UI.</p>
+                <p>It was built using Next.js (React) and Chakra UI.</p>
               </ProjectCard>
               <ProjectCard
                 title="Wepapp Dashboard"
@@ -123,11 +121,11 @@ export default function Home() {
                 previewLink="https://felipepcovatti.github.io/td-webapp-dashboard/"
               >
                 <p>
-                  This project was developed during my studies at{" "}
+                  A responsive dashboard developed during my studies at{" "}
                   <ExternalLink to="https://teamtreehouse.com/">
                     Treehouse
                   </ExternalLink>{" "}
-                  and was created based on a provided design.
+                  , created based on a provided design.
                 </p>
                 <p>
                   It was built using vanilla JavaScript and the Chart.js
