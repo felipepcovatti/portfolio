@@ -21,10 +21,18 @@ export default function ProjectCard({
       <div>Year: {year}</div>
       <div className="flex flex-col gap-3">{children}</div>
       <div className="flex gap-3 mt-2">
-        <ExternalLink to={sourceLink} mode="button">
+        <ExternalLink
+          to={sourceLink}
+          mode="button"
+          aria-label={`${title} source`}
+        >
           Source
         </ExternalLink>
-        <ExternalLink to={previewLink} mode="button">
+        <ExternalLink
+          to={previewLink}
+          mode="button"
+          aria-label={`${title} preview`}
+        >
           Preview
         </ExternalLink>
       </div>
