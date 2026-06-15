@@ -78,8 +78,8 @@ export default function Home() {
                 Figma file from Flowbite
               </ExternalLink>
               , this project consists of a dashboard that displays information
-              for a particular fictional company website (or e-commerce),
-              including revenue data, visits (accesses), and transactions.
+              for a fictional e-commerce website, including revenue data,
+              visits, and transactions.
             </p>
             <p>
               It was implemented using Nuxt (Vue.js), Tailwind, and Reka UI and
