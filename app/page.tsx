@@ -115,7 +115,7 @@ export default function Home() {
                 <p>It was built using Next.js (React) and Chakra UI.</p>
               </ProjectCard>
               <ProjectCard
-                title="Wepapp Dashboard"
+                title="Webapp Dashboard"
                 year={2018}
                 sourceLink="https://github.com/felipepcovatti/td-webapp-dashboard"
                 previewLink="https://felipepcovatti.github.io/td-webapp-dashboard/"
