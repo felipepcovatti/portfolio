@@ -124,7 +124,7 @@ export default function Home() {
                   A responsive dashboard developed during my studies at{" "}
                   <ExternalLink to="https://teamtreehouse.com/">
                     Treehouse
-                  </ExternalLink>{" "}
+                  </ExternalLink>
                   , created based on a provided design.
                 </p>
                 <p>
