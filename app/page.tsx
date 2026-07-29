@@ -46,7 +46,7 @@ export default function Home() {
         </div>
       </div>
       <div className="min-h-dvh w-full" id="projects">
-        <div className="sticky top-0 bg-white w-full py-4 dark:bg-black border-b-foreground/20 border-b">
+        <div className="sticky top-0 z-1 bg-white w-full py-4 dark:bg-black border-b-foreground/20 border-b">
           <nav className="flex items-center gap-2 relative sm:w-2xl px-4 sm:px-8 mx-auto flex-wrap">
             <div className="flex gap-1 sm:gap-2 sm:absolute sm:-translate-x-full sm:left-0 items-center">
               <a href="#home">Felipe</a>
@@ -71,6 +71,7 @@ export default function Home() {
             year={2026}
             sourceLink="https://github.com/felipepcovatti/nuxtflow"
             previewLink="https://nuxtflow.vercel.app/"
+            image="/images/nuxtflow.png"
           >
             <p>
               Created based on a{" "}
@@ -104,6 +105,7 @@ export default function Home() {
                 year={2021}
                 sourceLink="https://github.com/felipepcovatti/ig-worldtrip-chakra"
                 previewLink="https://fpc-worldtrip.vercel.app/"
+                image="/images/worldtrip.png"
               >
                 <p>
                   A fictional travel guide site developed during my studies at{" "}
@@ -119,6 +121,7 @@ export default function Home() {
                 year={2018}
                 sourceLink="https://github.com/felipepcovatti/td-webapp-dashboard"
                 previewLink="https://felipepcovatti.github.io/td-webapp-dashboard/"
+                image="/images/webapp.png"
               >
                 <p>
                   A responsive dashboard developed during my studies at{" "}
